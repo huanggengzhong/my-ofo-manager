@@ -4,27 +4,24 @@ import { Row, Col } from 'antd'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import NavLeft from './components/NavLeft'
+import Home from './pages/home'
 
-import  "./style/common.less"
-import "antd/dist/antd.css"//记得要导入antd样式
+import './style/common.less'
+import 'antd/dist/antd.css' //记得要导入antd样式
 
 class Admin extends Component {
   render() {
     return (
       <Row className="conteainer">
         <Col span={3} className="nav-left">
-        <NavLeft/>
+          <NavLeft />
         </Col>
         <Col span={21} className="main">
-         <Header >
-             
-         </Header>
-         <Row className="content">
-             内容
-         </Row>
-         <Footer>
-           
-         </Footer>
+          <Header />
+          <Row className="content">
+            <Home/>
+          </Row>
+          <Footer />
         </Col>
       </Row>
     )
