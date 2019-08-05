@@ -1,18 +1,19 @@
 import React, { Component } from 'react'
+import './index.less'
 import { Menu, Icon } from 'antd'
 
 const { SubMenu } = Menu
 
 // import MenuConfig from './../../config/menuConfig'
 
-// import './index.less'
+
 class NavLeft extends Component {
   render() {
     return (
       <div>
         <div className="logo">
-          <img src="../../../assets/logo-ant.svg" alt="" />
-          <h1>ofo后台管理系统</h1>
+          <img src="/assets/logo-ant.svg" alt="" />
+          <h1>后台管理系统</h1>
         </div>
 
         <Menu theme="dark">
