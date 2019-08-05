@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import  "../../style/common.less"
 class Header extends Component {
     constructor(props) {
         super(props);
@@ -7,7 +8,9 @@ class Header extends Component {
     render() { 
         return ( 
             <div>
-                This is header
+
+                <div className="header">This is header</div>
+                
             </div>
 
          );
