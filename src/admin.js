@@ -2,17 +2,18 @@
 import React, { Component } from 'react'
 import { Row, Col } from 'antd'
 import Header from './components/Header'
+import  "./style/common.less"
 
 class Admin extends Component {
   render() {
     return (
-      <Row>
-        <Col span={3}>left</Col>
-        <Col span={21}>
-         <Header>
+      <Row className="conteainer">
+        <Col span={3} className="nav-left">left</Col>
+        <Col span={21} className="main">
+         <Header >
              头部
          </Header>
-         <Row>
+         <Row className="content">
              内容
          </Row>
         </Col>

@@ -1,7 +1,30 @@
 
-div{
-   
-    .header{
-        color: red;
+body,html{
+    margin: 0;
+    padding: 0;
+}
+.conteainer{
+   display: flex;
+   .nav-left{
+    width: 15%;
+    min-width: 180px;
+    height: calc(100vh);
+    background-color: hotpink;
+   }
+   .main {
+       flex: 1;
+       height: calc(100vh);
+       .header{
+           background-color: skyblue;
+           height: 100px;
+       }
+       .content{
+        position: relative;
+        
+        background-color: orange;
+        height: calc(100% - 100px);
+
     }
+   }
+  
 }
