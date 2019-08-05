@@ -1,13 +1,36 @@
 import React, { Component } from 'react'
 import './index.less'
-import { Menu, Icon } from 'antd'
+import { Menu } from 'antd'
+import MenuConfig from './../../config/menuConfig'
 
 const { SubMenu } = Menu
 
-// import MenuConfig from './../../config/menuConfig'
-
-
 class NavLeft extends Component {
+  state = {}
+  componentWillMount() {
+    console.log(MenuConfig);
+    
+    const menuTreeNode = this.renderMenu(MenuConfig)
+    console.log(menuTreeNode);
+    
+    this.setState({
+      menuTreeNode
+    })
+  }
+  //菜单渲染
+  renderMenu = (data) => {
+    return data.map(item => {
+      if (item.children) {
+        return (
+        <SubMenu title={item.title} key={item.key}>
+        {this.renderMenu(item.children)}
+        {/* 递归遍历到底 */}
+        </SubMenu>
+        )
+      }
+      return <Menu.Item title={item.title} key={item.key}>{item.title}</Menu.Item>
+    })
+  }
   render() {
     return (
       <div>
@@ -16,38 +39,12 @@ class NavLeft extends Component {
           <h1>后台管理系统</h1>
         </div>
 
+        
         <Menu theme="dark">
-          <SubMenu
-            key="sub1"
-            title={
-              <span>
-                <Icon type="mail" />
-                <span>Navigation One</span>
-              </span>
-            }
-          >
-            <Menu.Item key="1">Option 1</Menu.Item>
-            <Menu.Item key="2">Option 2</Menu.Item>
-            <Menu.Item key="3">Option 3</Menu.Item>
-            <Menu.Item key="4">Option 4</Menu.Item>
-          </SubMenu>
+        {this.state.menuTreeNode}
+
         </Menu>
-        <Menu theme="dark">
-          <SubMenu
-            key="sub1"
-            title={
-              <span>
-                <Icon type="mail" />
-                <span>Navigation One</span>
-              </span>
-            }
-          >
-            <Menu.Item key="1">Option 1</Menu.Item>
-            <Menu.Item key="2">Option 2</Menu.Item>
-            <Menu.Item key="3">Option 3</Menu.Item>
-            <Menu.Item key="4">Option 4</Menu.Item>
-          </SubMenu>
-        </Menu>
+
       </div>
     )
   }
