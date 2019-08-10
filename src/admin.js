@@ -19,7 +19,9 @@ class Admin extends Component {
         <Col span={21} className="main">
           <Header />
           <Row className="content">
-            <Home/>
+            {/* <Home/> */}
+            {/* 之前是写死的Home */}
+            {this.props.children}
           </Row>
           <Footer />
         </Col>
